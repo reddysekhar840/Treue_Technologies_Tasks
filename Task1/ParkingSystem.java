@@ -5,7 +5,6 @@ import java.util.*;
 public class ParkingSystem 
 {
     private List<ParkingSpot> parkingSpots;
-    //OnlineParkingSystem ops = new OnlineParkingSystem();
     public ParkingSystem(int totalSpots) 
     {
     	parkingSpots = new ArrayList<>();
@@ -49,25 +48,23 @@ public class ParkingSystem
     	}
     	OnlineParkingSystem.start(ps);
     }
-    
-
-	public void vacateSlot(int vs,ParkingSystem ps) 
-	{
-		for(ParkingSpot pslot : parkingSpots)
-    	{
-			if(pslot.getSpotNumber() == vs)
-    		{
-				if(!pslot.isAvailable())
-				{
-					pslot.release();
-					System.out.println("Spot " + vs + " Vacated successfully.\n");
-				}
-				else
-				{
-					System.out.println("Spot " + vs + " is not Booked.\n");
-				}
-    		}
-    	}
-		OnlineParkingSystem.start(ps);
-	}
+    public void vacateSlot(int vs,ParkingSystem ps) 
+    {
+	    for(ParkingSpot pslot : parkingSpots)
+	    {
+		    if(pslot.getSpotNumber() == vs)
+		    {
+			    if(!pslot.isAvailable())
+			    {
+				    pslot.release();
+				    System.out.println("Spot " + vs + " Vacated successfully.\n");
+			    }
+			    else
+			    {
+				    System.out.println("Spot " + vs + " is not Booked.\n");
+			    }
+		    }
+	    }
+	    OnlineParkingSystem.start(ps);
+    }
 }
